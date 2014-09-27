@@ -1,0 +1,59 @@
+.register-input {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.register-form {
+    max-width: 350px;
+}
+
+input.ng-dirty.ng-invalid {
+    background-color: pink !important;
+}
+
+input.ng-dirty.ng-valid.validity {
+    background-color: darkseagreen !important;
+}
+
+.playField {
+    align-content: center;
+    max-width: 400px;
+}
+
+.playField td {
+    height: 135px;
+    text-align: center;
+    font-size: 3em;
+}
+
+.playField, .playField td, .playField tr {
+    margin: 0;
+    border: 1px solid black;
+}
+
+.playField td:hover {
+    background-color: lightgrey;
+}
+
+.create-game-form {
+    max-width: 350px;
+}
+
+.create-game-form button {
+    margin-top: 5px;
+    width: 100%;
+}
+
+#footer {
+    margin-top: 30px;
+}
+
+.main-view {
+    margin-bottom: 40px;
+}
+
+.username-panel {
+    padding: 6px;
+    border-radius: 3px;
+    margin-right: 10px;
+}

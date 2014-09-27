@@ -1,0 +1,50 @@
+<div clas="container">
+    <h3>Choose a game from the list below or start your own game</h3>
+    <br/>
+    <input class="input-sm" type="text" ng-model="gamesFilter" placeholder="Filter games.."/>
+    <a href="#/creategame" class="btn btn-primary pull-right">Create Game</a>
+
+    <div ng-show="identity.isAuthenticated()">
+        <h3>My running games</h3>
+        <table class="table table-striped">
+            <thead>
+                <th>#</th>
+                <th>Name</th>
+                <th>By</th>
+                <th>Created on</th>
+            </thead>
+            <tbody>
+            <tr ng-repeat="game in myGames | filter:gamesFilter">
+                <td>{{$index}}</td>
+                <td><a href="#/game/{{game.Id}}">{{game.Name}}</a></td>
+                <td>{{game.Creator}}</td>
+                <td>{{game.DateCreated | date}}</td>
+                <td><a href="#/game/{{game.Id}}" class="btn btn-sm">Play</a></td>
+            </tr>
+            </tbody>
+        </table>
+        <br/>
+    </div>
+
+    <div>
+        <h3>Available Games</h3>
+        <table class="table table-striped">
+            <thead>
+                <th>#</th>
+                <th>Name</th>
+                <th>By</th>
+                <th>Created on</th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="game in allGames | filter:gamesFilter">
+                    <td>{{$index}}</td>
+                    <td><a href="#/game/{{game.Id}}">{{game.Name}}</a></td>
+                    <td>{{game.Creator}}</td>
+                    <td>{{game.DateCreated | date}}</td>
+                    <td><button class="btn btn-sm" ng-click="joinGame(game.Id)">Join</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

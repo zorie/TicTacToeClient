@@ -1,0 +1,10 @@
+<div class="container col-md-8" ng-controller="RegisterCtrl">
+    <form name="signUpForm" class="register-form" role="form">
+        <h3>Register</h3>
+        <input type="text" class="form-control register-input" required autofocus placeholder="Username.." ng-trim ng-model="newAccount.username" ng-minlength="1" ng-maxlength="25"/>
+        <input type="password" class="form-control register-input" required placeholder="Password.." ng-trim ng-model="newAccount.password" ng-minlength="6" ng-maxlength="10"/>
+        <input type="password" class="form-control register-input" required placeholder="Confirm password.." ng-trim ng-model="newAccount.confirmPassword" ng-minlength="6" ng-maxlength="10"/>
+        <button class="btn btn-primary" type="submit" ng-disabled="signUpForm.$pristine || signUpForm.$invalid || newAccount.password != newAccount.confirmPassword"
+                ng-click="register(newAccount)">Register now</button>
+    </form>
+</div>

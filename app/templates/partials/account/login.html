@@ -1,0 +1,8 @@
+<div class="container">
+    <form name="loginForm" class="register-form" ng-controller="LoginCtrl">
+        <h3>Log in</h3>
+        <input type="text" class="form-control register-input" required ng-model="user.username" ng-minlength="1" ng-maxlength="25" placeholder="Username.."/>
+        <input type="password" class="form-control register-input" required ng-model="user.password" ng-minlength="6" ng-maxlength="10" placeholder="Password.."/>
+        <button class="btn btn-primary register-input" ng-disabled="loginForm.$pristine || loginForm.$invalid" ng-click="login(user)">Log in</button>
+    </form>
+</div>
